@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        .heading h1 {
+            color: black;
+        }
+        .heading span {
+            color:#f5f5dc;
+        }
+        .heading
+        {
+            text-align: center;
+            font-size: 80px;
+            font-family:cursive;
+        }
+        input[type="button"]{
+            width: 100%;
+            border-radius: 8px;
+            background-color: black;
+            color: white;
+            cursor: pointer;
+        }
+        table{
+            outline: 5px solid white;
+        }
+        html{
+            background-image: linear-gradient(to right,#ee0979,#ff6a00);
+        }
+        input[type="text"]{
+            background-color: black;
+            color: white;
+            text-align: right;
+            border-radius: 8px;
+        }
+        .into{
+           border:solid 3px white;
+           text-align: center;
+        }
+        .para
+        {
+            text-align: center;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="heading"><span>Dig</span>Itz</h1>
+    <br><br>
+    <table align="center">
+        <tr>
+            <td><input type="button" onclick="clr()" value="C"></td>
+            <td colspan="4"><input type="text" id="textval"></td>
+        </tr>
+        <tr>
+            <td><input type="button" onclick="display('+')" value="+"></td>
+            <td ><input type="button" onclick="display('1')" value="1"></td>
+            <td><input type="button" onclick="display('2')" value="2"></td>
+            <td><input type="button" onclick="display('3')" value="3"></td>
+        </tr>
+        <tr>
+            <td><input type="button" onclick="display('-')" value="-"></td>
+            <td><input type="button" onclick="display('4')" value="4"></td>
+            <td><input type="button" onclick="display('5')" value="5"></td>
+            <td><input type="button" onclick="display('6')" value="6"></td>
+        </tr>
+        <tr>
+            <td><input type="button" onclick="display('*')" value="*"></td>
+            <td><input type="button" onclick="display('7')" value="7"></td>
+            <td><input type="button" onclick="display('8')" value="8"></td>
+            <td><input type="button" onclick="display('9')" value="9"></td>
+        </tr>
+        <tr>
+            <td><input type="button" onclick="display('/')" value="/"></td>
+            <td><input type="button" onclick="display('0')" value="0"></td>
+            <td><input type="button" onclick="display('.')" value="."></td>
+            <td><input type="button" onclick="solveExpression()" value="="></td>
+        </tr>
+    </table>
+    <br><br><br><br>
+        <p class="para"><strong>DigItz</strong> is a website created for small calculations like addition, subtraction,<br>multiplication and division. I have used basic <i>HTML</i>, <i>CSS</i> and <i>JavaScript</i>.<br>This miniature website is my first ever project in the domain of <b>JavaScript</b></p>
+        <br><br>
+        <hr style="width:70%;text-align:center">
+    </div>
+    <script>
+        function clr()
+        {
+            document.getElementById('textval').value = '';
+        }
+        function display(val){
+            document.getElementById('textval').value+=val;
+        }
+        function solveExpression()
+        {
+            let x=document.getElementById("textval").value;
+            let y=eval(x);
+            document.getElementById("textval").value=y;
+        }
+    </script>
+</body>
+</html>
